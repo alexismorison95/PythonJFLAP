@@ -33,7 +33,7 @@ def validarCadena(palabra, dicc, inicial, final):
 
     Retorna:
     =======
-    isValida?: Booleano que indica se la cadena es valida o no.
+    isValida?: Booleano que indica si la cadena es valida o no.
     """
 
     if (palabra == ""):
