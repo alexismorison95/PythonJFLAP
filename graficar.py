@@ -31,10 +31,10 @@ def graficarAF(estados, inicio, final, transiciones, alfabeto=None):
     for e in estados:
 
         if e[0] in final:
-            g.node(e[0], e[1], shape="doublecircle")
+            g.node(name=e[0], label=e[1], shape="doublecircle")
 
         else:
-            g.node(e[0], e[1])
+            g.node(name=e[0], label=e[1])
 
         if e[0] in inicio:
             g.edge('ini', e[0])
@@ -49,7 +49,7 @@ def graficarAF(estados, inicio, final, transiciones, alfabeto=None):
         g.edge(t[0], t[1], label=str(t[2]))
     
     # Renderizo el grafo y lo guardo
-    g.render(view=True)
+    g.render(view=True, directory="res")
 
 
 # Ejemplo de uso

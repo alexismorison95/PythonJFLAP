@@ -58,7 +58,7 @@ def loadJFLAP(source, alfIsInt=False):
 
 
     print('Estados', estados)
-    print('Iniciales', inicial)
+    print('Inicial', inicial)
     print('Finales', final)
     print('Transiciones', transiciones)
 
