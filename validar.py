@@ -38,7 +38,7 @@ def validarCadena(palabra, dicc, inicial, final):
 
     if (palabra == ""):
 
-        if inicial in final:
+        if (inicial in final):
             return True
         else:
             return False

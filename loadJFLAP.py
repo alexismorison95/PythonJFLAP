@@ -57,9 +57,9 @@ def loadJFLAP(source, alfIsInt=False):
             transiciones.append((nodoI, nodoF, label))
 
 
-    print('Estados', estados)
-    print('Inicial', inicial)
-    print('Finales', final)
-    print('Transiciones', transiciones)
+    # print('Estados', estados)
+    # print('Inicial', inicial)
+    # print('Finales', final)
+    # print('Transiciones', transiciones)
 
     return estados, inicial, final, transiciones

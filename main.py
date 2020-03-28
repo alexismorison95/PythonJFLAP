@@ -2,29 +2,80 @@ from graficar import graficarAF
 from loadJFLAP import loadJFLAP
 from validar import generarDiccionario, validarCadena
 
-
-# Cargo el archivo JFLAP
-estados, inicial, final, transiciones = loadJFLAP(source="jflapArchivos/prueba2.jff", alfIsInt=False)
-
-
-# Grafico el AF
-graficarAF(estados, inicial, final, transiciones)
+import sys
+import getopt
 
 
-print()
+def comoUsar():
+    """
+    Funcion que muestra el tutorial de como usar el programa.
+    """
+    print()
+    print("Tutorial")
+    print("Graficar AF: python main.py [--graficar, -g] <file>.jff")
+    print("Validar una cadena: python main.py [--validar, -v] <file>.jff <cadena a validar>")
 
 
-# Genero el diccionario del AF
-dicc = generarDiccionario(transiciones)
+def main():
+
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], "hg:v:", ["help", "graficar=", "validar="])
+    except getopt.GetoptError as err:
+        print()
+        print(err)
+        comoUsar()
+        sys.exit(2)
+
+    for opt, arg in opts:
+
+        # AYUDA
+        if opt in ("-h", "--help"):
+            comoUsar()
+            sys.exit(2)
+        
+        # GRAFICAR
+        elif opt in ("-g", "--graficar"):
+
+            try:
+                open(arg, 'r')
+            except (OSError, IOError) as e:
+                print()
+                print(e)
+                comoUsar()
+                sys.exit(2)
+            
+            # Cargo el archivo JFLAP
+            estados, inicial, final, transiciones = loadJFLAP(source=arg, alfIsInt=False)
+
+            # Grafico el AF y lo guardo en la carpeta res/
+            graficarAF(estados, inicial, final, transiciones)
+
+        # VALIDAR CADENA
+        elif opt in ("-v", "--validar"):
+
+            try:
+                open(arg, 'r')
+            except (OSError, IOError) as e:
+                print()
+                print(e)
+                comoUsar()
+                sys.exit(2)
+
+            # Cargo el archivo JFLAP
+            estados, inicial, final, transiciones = loadJFLAP(source=arg, alfIsInt=False)
+
+            # Genero el diccionario
+            dicc = generarDiccionario(transiciones)
+
+            # Valido la cadena
+            res = validarCadena(args[0], dicc, inicial[0], final)
+
+            # Muestro el resultado
+            if res:
+                print("La cadena '{}' es valida".format(args[0]))
+            else:
+                print("La cadena '{}' es no valida".format(args[0]))
 
 
-# Valido una cadena
-cadena = "11001010"
-
-res = validarCadena(cadena, dicc, inicial[0], final)
-
-if res:
-    print("La cadena '{}' es valida".format(cadena))
-else:
-    print("La cadena '{}' es no valida".format(cadena))
-
+if __name__ == '__main__':
+    main()
