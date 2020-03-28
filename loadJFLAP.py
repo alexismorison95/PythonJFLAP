@@ -10,7 +10,7 @@ def loadJFLAP(source, alfIsInt=False):
     source: Ruta del archivo (string). \n
     alfIsInt: Booleano que indica si el alfabeto son numeros.
 
-    Devuelve:
+    Retorna:
     =========
 
     estados: Lista de estados. Estructura (id, name) \n
