@@ -13,7 +13,7 @@ def comoUsar():
     print()
     print("Tutorial")
     print("Graficar AF: python main.py [--graficar, -g] <file>.jff")
-    print("Validar una cadena: python main.py [--validar, -v] <file>.jff <cadena a validar>")
+    print("Validar una cadena: python main.py [--validar, -v] <file>.jff <cadena a validar o nada si cadena vacia>")
 
 
 def main():
@@ -68,13 +68,17 @@ def main():
             dicc = generarDiccionario(transiciones)
 
             # Valido la cadena
-            res = validarCadena(args[0], dicc, inicial[0], final)
+            cad = ""
+            if(args):
+                cad = args[0]
+
+            res = validarCadena(cad, dicc, inicial[0], final)
 
             # Muestro el resultado
             if res:
-                print("La cadena '{}' es valida".format(args[0]))
+                print("La cadena '{}' es valida".format(cad))
             else:
-                print("La cadena '{}' es no valida".format(args[0]))
+                print("La cadena '{}' es no valida".format(cad))
 
 
 if __name__ == '__main__':
