@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 
 def loadJFLAP(source, alfIsInt=False):
     """
-    Funcion para cargar desde un archivo .jff de JFLAP el grafo graficado. \n
+    Funcion para cargar desde un archivo .jff de JFLAP el AF graficado. \n
 
     Parametros:
     ===========

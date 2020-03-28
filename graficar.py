@@ -3,7 +3,7 @@ import graphviz as gv
 
 def graficarAF(estados, inicio, final, transiciones, alfabeto=None):
     """
-    Funcion para graficar un autómata finito. Todos los parámetros son listas o tuplas. \n
+    Funcion para graficar un autómata finito.
 
     Parametros
     ==========
