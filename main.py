@@ -1,6 +1,6 @@
-from graficar import graficarAF
-from loadJFLAP import loadJFLAP
-from validar import generarDiccionario, validarCadena
+from func.graficar import graficarAF
+from func.loadJFLAP import loadJFLAP
+from func.validar import generarDiccionario, validarCadena
 
 import sys
 import getopt

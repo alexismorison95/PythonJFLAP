@@ -1,4 +1,3 @@
-
 def generarDiccionario(tran):
     """
     Funcion para generar un diccionario.
