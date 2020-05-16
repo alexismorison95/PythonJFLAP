@@ -21,10 +21,11 @@ def graficarAF(estados, inicio, final, transiciones, alfabeto=None):
     """
 
     # Creo el grafo y le digo que lo guarde en formato .png
-    g = gv.Digraph(format='png')
+    g = gv.Digraph('finite_state_machine', format='png')
 
     # Direccion del grafo, de izquierda a derecha
-    g.graph_attr['rankdir'] = 'LR'
+    #g.graph_attr['rankdir'] = 'LR'
+    g.attr(rankdir='LR')
 
     # Cargo los nodos
     g.node('ini', shape="point")
@@ -34,7 +35,7 @@ def graficarAF(estados, inicio, final, transiciones, alfabeto=None):
             g.node(name=e[0], label=e[1], shape="doublecircle")
 
         else:
-            g.node(name=e[0], label=e[1])
+            g.node(name=e[0], label=e[1], shape="circle")
 
         if e[0] in inicio:
             g.edge('ini', e[0])
