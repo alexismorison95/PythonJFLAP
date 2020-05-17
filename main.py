@@ -12,7 +12,7 @@ def comoUsar():
     """
     print()
     print("Tutorial")
-    print("Graficar AF: python main.py [--graficar, -g] <file>.jff")
+    print("Graficar AF: python main.py [--graficar, -g] <./ruta/file>.jff")
     print("Validar una cadena: python main.py [--validar, -v] <file>.jff <cadena a validar o nada si cadena vacia>")
 
 
