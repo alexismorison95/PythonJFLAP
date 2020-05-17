@@ -1,6 +1,6 @@
 # PythonJFLAP
 
-Programa de consola para manejar autónomas finitos. Permite cargar un archivo de JFLAP para generar una imagen mejor del AF o para usarlo para validar cadenas. <br />
+Programa de consola para manejar autómatas finitos. Permite cargar un archivo de JFLAP para generar una imagen mejor del AF o para usarlo para validar cadenas. <br />
 
 Los archivos .jff van en la carpeta jflaps/ <br />
 
